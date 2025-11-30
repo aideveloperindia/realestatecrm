@@ -5,14 +5,14 @@ import Image from 'next/image';
 
 export default function QuotationPage() {
   return (
-    <div className="px-4 py-6 max-w-4xl mx-auto">
-      <div className="bg-white shadow rounded-lg p-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Project Quotation</h1>
-        <p className="text-gray-600 mb-8">Karimnagar Properties CRM - Development & Deployment</p>
+    <div className="px-2 sm:px-4 py-4 sm:py-6 max-w-4xl mx-auto">
+      <div className="bg-white shadow rounded-lg p-4 sm:p-6 lg:p-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Project Quotation</h1>
+        <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8">Karimnagar Properties CRM - Development & Deployment</p>
 
         <div className="space-y-6">
           <div>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Project Overview</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Project Overview</h2>
             <p className="text-gray-700 mb-4">
               A comprehensive, production-ready CRM system for real estate property management with 
               intelligent matching, WhatsApp integration, and complete data management capabilities. 
@@ -22,7 +22,7 @@ export default function QuotationPage() {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Features Included</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Features Included</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
               <li>Secure admin login system</li>
               <li>Client Management (Property Sellers)</li>
@@ -39,13 +39,13 @@ export default function QuotationPage() {
           </div>
 
           <div className="border-t pt-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Pricing</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Pricing</h2>
             
             <div className="space-y-4">
-              <div className="p-5 bg-gray-50 rounded-lg">
-                <div className="flex justify-between items-center mb-3">
-                  <h3 className="font-semibold text-gray-900 text-lg">Development & Deployment</h3>
-                  <div className="text-2xl font-bold text-gray-900">₹1,90,000</div>
+              <div className="p-4 sm:p-5 bg-gray-50 rounded-lg">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
+                  <h3 className="font-semibold text-gray-900 text-base sm:text-lg">Development & Deployment</h3>
+                  <div className="text-xl sm:text-2xl font-bold text-gray-900">₹1,90,000</div>
                 </div>
                 <p className="text-sm text-gray-600 mb-3">One-time payment includes:</p>
                 <ul className="text-sm text-gray-700 space-y-1 ml-4 list-disc">
@@ -59,10 +59,10 @@ export default function QuotationPage() {
                 </ul>
               </div>
 
-              <div className="p-5 bg-green-50 rounded-lg border-2 border-green-200">
-                <div className="flex justify-between items-center mb-3">
-                  <h3 className="font-semibold text-gray-900 text-lg">Hosting Cost</h3>
-                  <div className="text-2xl font-bold text-green-600">₹0/month</div>
+              <div className="p-4 sm:p-5 bg-green-50 rounded-lg border-2 border-green-200">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
+                  <h3 className="font-semibold text-gray-900 text-base sm:text-lg">Hosting Cost</h3>
+                  <div className="text-xl sm:text-2xl font-bold text-green-600">₹0/month</div>
                 </div>
                 <p className="text-sm text-gray-700">
                   We use FREE tier hosting platforms (Vercel & MongoDB Atlas) which are completely free 
@@ -70,10 +70,10 @@ export default function QuotationPage() {
                 </p>
               </div>
 
-              <div className="p-5 bg-blue-50 rounded-lg border-2 border-blue-200">
-                <div className="flex justify-between items-center mb-3">
-                  <h3 className="font-semibold text-gray-900 text-lg">Future Changes/Updates</h3>
-                  <div className="text-2xl font-bold text-blue-600">₹500/change</div>
+              <div className="p-4 sm:p-5 bg-blue-50 rounded-lg border-2 border-blue-200">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
+                  <h3 className="font-semibold text-gray-900 text-base sm:text-lg">Future Changes/Updates</h3>
+                  <div className="text-xl sm:text-2xl font-bold text-blue-600">₹500/change</div>
                 </div>
                 <p className="text-sm text-gray-700 mb-2">
                   Pay only when you need changes. Each change that takes 1 day of work costs ₹500.
@@ -84,42 +84,42 @@ export default function QuotationPage() {
                 </p>
               </div>
 
-              <div className="flex justify-between items-center p-5 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg border-2 border-blue-300">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 p-4 sm:p-5 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg border-2 border-blue-300">
                 <div>
-                  <h3 className="font-bold text-gray-900 text-xl">Total Project Cost</h3>
-                  <p className="text-sm text-gray-600">Everything included</p>
+                  <h3 className="font-bold text-gray-900 text-lg sm:text-xl">Total Project Cost</h3>
+                  <p className="text-xs sm:text-sm text-gray-600">Everything included</p>
                 </div>
-                <div className="text-right">
-                  <div className="text-3xl font-bold text-blue-600">₹1,90,000</div>
-                  <div className="text-sm text-gray-600">One-time only</div>
+                <div className="text-left sm:text-right">
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-600">₹1,90,000</div>
+                  <div className="text-xs sm:text-sm text-gray-600">One-time only</div>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="border-t pt-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Cost Savings & Benefits</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Cost Savings & Benefits</h2>
             
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 sm:p-6 rounded-lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-3">Current Monthly Cost</h3>
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between items-center p-3 bg-white rounded">
-                      <span className="text-gray-700">Telecaller Salary:</span>
-                      <span className="font-bold text-gray-900">₹10,000/month</span>
+                    <div className="flex justify-between items-center p-2 sm:p-3 bg-white rounded">
+                      <span className="text-xs sm:text-sm text-gray-700">Telecaller Salary:</span>
+                      <span className="font-bold text-xs sm:text-sm text-gray-900">₹10,000/month</span>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-white rounded">
-                      <span className="text-gray-700">Field Executive Salary:</span>
-                      <span className="font-bold text-gray-900">₹10,000/month</span>
+                    <div className="flex justify-between items-center p-2 sm:p-3 bg-white rounded">
+                      <span className="text-xs sm:text-sm text-gray-700">Field Executive Salary:</span>
+                      <span className="font-bold text-xs sm:text-sm text-gray-900">₹10,000/month</span>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-red-100 rounded border-2 border-red-200">
-                      <span className="font-semibold text-gray-900">Total Monthly Cost:</span>
-                      <span className="font-bold text-red-600 text-lg">₹20,000/month</span>
+                    <div className="flex justify-between items-center p-2 sm:p-3 bg-red-100 rounded border-2 border-red-200">
+                      <span className="font-semibold text-xs sm:text-sm text-gray-900">Total Monthly Cost:</span>
+                      <span className="font-bold text-sm sm:text-lg text-red-600">₹20,000/month</span>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-red-100 rounded border-2 border-red-200">
-                      <span className="font-semibold text-gray-900">Annual Cost:</span>
-                      <span className="font-bold text-red-600 text-lg">₹2,40,000/year</span>
+                    <div className="flex justify-between items-center p-2 sm:p-3 bg-red-100 rounded border-2 border-red-200">
+                      <span className="font-semibold text-xs sm:text-sm text-gray-900">Annual Cost:</span>
+                      <span className="font-bold text-sm sm:text-lg text-red-600">₹2,40,000/year</span>
                     </div>
                   </div>
                 </div>
@@ -127,21 +127,21 @@ export default function QuotationPage() {
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-3">With CRM System</h3>
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between items-center p-3 bg-white rounded">
-                      <span className="text-gray-700">Initial Setup (One-time):</span>
-                      <span className="font-bold text-gray-900">₹1,90,000</span>
+                    <div className="flex justify-between items-center p-2 sm:p-3 bg-white rounded">
+                      <span className="text-xs sm:text-sm text-gray-700">Initial Setup (One-time):</span>
+                      <span className="font-bold text-xs sm:text-sm text-gray-900">₹1,90,000</span>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-white rounded">
-                      <span className="text-gray-700">Hosting (Monthly):</span>
-                      <span className="font-bold text-green-600">₹0/month</span>
+                    <div className="flex justify-between items-center p-2 sm:p-3 bg-white rounded">
+                      <span className="text-xs sm:text-sm text-gray-700">Hosting (Monthly):</span>
+                      <span className="font-bold text-xs sm:text-sm text-green-600">₹0/month</span>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-white rounded">
-                      <span className="text-gray-700">Maintenance:</span>
-                      <span className="font-bold text-gray-900">₹500/change</span>
+                    <div className="flex justify-between items-center p-2 sm:p-3 bg-white rounded">
+                      <span className="text-xs sm:text-sm text-gray-700">Maintenance:</span>
+                      <span className="font-bold text-xs sm:text-sm text-gray-900">₹500/change</span>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-green-100 rounded border-2 border-green-200">
-                      <span className="font-semibold text-gray-900">First Year Total:</span>
-                      <span className="font-bold text-green-600 text-lg">₹1,90,000*</span>
+                    <div className="flex justify-between items-center p-2 sm:p-3 bg-green-100 rounded border-2 border-green-200">
+                      <span className="font-semibold text-xs sm:text-sm text-gray-900">First Year Total:</span>
+                      <span className="font-bold text-sm sm:text-lg text-green-600">₹1,90,000*</span>
                     </div>
                     <p className="text-xs text-gray-600 mt-2">
                       *Assuming no changes needed in first year. Each change costs ₹500.
@@ -150,17 +150,17 @@ export default function QuotationPage() {
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-white rounded-lg border-2 border-green-300">
-                <div className="flex justify-between items-center">
+              <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-white rounded-lg border-2 border-green-300">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                   <div>
-                    <h3 className="font-bold text-gray-900 text-lg">First Year Savings</h3>
-                    <p className="text-sm text-gray-600">
+                    <h3 className="font-bold text-gray-900 text-base sm:text-lg">First Year Savings</h3>
+                    <p className="text-xs sm:text-sm text-gray-600">
                       Your current annual cost: ₹2,40,000 vs CRM first year: ₹1,90,000
                     </p>
                   </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-green-600">₹50,000</div>
-                    <div className="text-sm text-gray-600">Saved in first year</div>
+                  <div className="text-left sm:text-right">
+                    <div className="text-xl sm:text-2xl font-bold text-green-600">₹50,000</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Saved in first year</div>
                   </div>
                 </div>
               </div>
@@ -180,7 +180,7 @@ export default function QuotationPage() {
           </div>
 
           <div className="border-t pt-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">What's Included</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">What's Included</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
               <div className="p-4 bg-green-50 rounded-lg">
                 <h3 className="font-medium text-green-900 mb-2">✓ Complete CRM System</h3>
@@ -210,7 +210,7 @@ export default function QuotationPage() {
           </div>
 
           <div className="border-t pt-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Payment Terms</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Payment Terms</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
               <li>50% advance payment (₹95,000) to start development</li>
               <li>40% payment (₹76,000) upon completion and testing</li>
@@ -220,7 +220,7 @@ export default function QuotationPage() {
           </div>
 
           <div className="border-t pt-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Timeline</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Timeline</h2>
             <div className="space-y-2 text-gray-700">
               <div className="flex justify-between">
                 <span>Development Phase:</span>
@@ -242,7 +242,7 @@ export default function QuotationPage() {
           </div>
 
           <div className="border-t pt-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Contact Us</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Contact Us</h2>
             <div className="bg-blue-50 p-6 rounded-lg">
               <p className="text-gray-700 mb-4">
                 Ready to automate your real estate business? Let's discuss your requirements:

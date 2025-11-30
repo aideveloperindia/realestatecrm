@@ -119,22 +119,22 @@ export default function CustomersList() {
   }
 
   return (
-    <div className="px-4 py-6">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Customers (Buyers)</h1>
+    <div className="px-2 sm:px-4 py-4 sm:py-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Customers (Buyers)</h1>
         <button
           onClick={() => setShowForm(!showForm)}
-          className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700"
+          className="w-full sm:w-auto bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700"
         >
           {showForm ? 'Cancel' : 'Add Customer'}
         </button>
       </div>
 
       {showForm && (
-        <div className="bg-white shadow rounded-lg p-6 mb-6">
+        <div className="bg-white shadow rounded-lg p-4 sm:p-6 mb-6">
           <h2 className="text-lg font-medium mb-4">Add New Customer</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700">Name *</label>
                 <input
@@ -268,23 +268,23 @@ export default function CustomersList() {
                         </span>
                       )}
                     </div>
-                    <div className="mt-2 text-sm text-gray-500">
-                      <span>{customer.phone}</span>
-                      {customer.email && <span className="ml-4">{customer.email}</span>}
+                    <div className="mt-2 text-xs sm:text-sm text-gray-500 space-y-1">
+                      <div className="truncate">{customer.phone}</div>
+                      {customer.email && <div className="truncate">{customer.email}</div>}
                       <div className="mt-1">
-                        Budget: ₹{customer.budget_min.toLocaleString()} - ₹{customer.budget_max.toLocaleString()}
+                        <div>Budget: ₹{customer.budget_min.toLocaleString()} - ₹{customer.budget_max.toLocaleString()}</div>
                         {customer.preferred_types.length > 0 && (
-                          <span className="ml-4">
+                          <div className="mt-1 truncate">
                             Types: {customer.preferred_types.join(', ')}
-                          </span>
+                          </div>
                         )}
                         {customer.preferred_locations.city && (
-                          <span className="ml-4">Location: {customer.preferred_locations.locality || customer.preferred_locations.city}</span>
+                          <div className="mt-1 truncate">Location: {customer.preferred_locations.locality || customer.preferred_locations.city}</div>
                         )}
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-shrink-0 mt-3 sm:mt-0">
                     <button
                       onClick={() => toggleOptIn(customer._id, customer.opt_in_whatsapp)}
                       className={`text-sm px-3 py-1 rounded ${
