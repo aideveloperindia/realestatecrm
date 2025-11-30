@@ -208,7 +208,7 @@ export default function QuotationPage() {
                     <span className="text-red-600">Without Software:</span> Notebook lost, Excel file corrupted, phone damaged = All customer data gone. Lost income from those customers.
                   </p>
                   <p className="mt-1 text-xs sm:text-sm">
-                    <span className="text-green-600">With Software:</strong> All data in cloud. Even if device breaks, data is safe. No income loss.
+                    <span className="text-green-600">With Software:</span> All data in cloud. Even if device breaks, data is safe. No income loss.
                   </p>
                 </div>
               </div>
