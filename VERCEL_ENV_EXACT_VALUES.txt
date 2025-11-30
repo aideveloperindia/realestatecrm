@@ -1,0 +1,84 @@
+===========================================
+EXACT VALUES FOR VERCEL ENVIRONMENT VARIABLES
+===========================================
+
+Copy these EXACTLY into Vercel Dashboard → Settings → Environment Variables
+
+===========================================
+VARIABLE 1: MONGODB_URI
+===========================================
+
+Key: MONGODB_URI
+
+Value (copy entire line, no spaces before/after):
+mongodb+srv://aideveloperindia_db_user:y3VndJC8SvQovBKY@realestatecrm.fiq02a1.mongodb.net/karimnagar_crm?retryWrites=true&w=majority&appName=realestatecrm
+
+Environments: ☑ Production ☑ Preview ☑ Development
+
+IMPORTANT: 
+- Must include /karimnagar_crm (database name)
+- No quotes around the value
+- No spaces
+
+===========================================
+VARIABLE 2: JWT_SECRET
+===========================================
+
+Key: JWT_SECRET
+
+Value:
+6fa9e19fcca83be9b4eec7277bd48d171d07934c879bf67a3ba8fb2089a26ca3
+
+Environments: ☑ Production ☑ Preview ☑ Development
+
+===========================================
+VARIABLE 3: NEXT_PUBLIC_APP_URL
+===========================================
+
+Key: NEXT_PUBLIC_APP_URL
+
+Value:
+https://realestatecrms.vercel.app
+
+Environments: ☑ Production ☑ Preview ☑ Development
+
+===========================================
+VERIFICATION CHECKLIST
+===========================================
+
+After adding variables in Vercel:
+
+1. [ ] All 3 variables added
+2. [ ] Variable names are EXACT (case-sensitive):
+   - MONGODB_URI (not mongodb_uri)
+   - JWT_SECRET (not jwt_secret)
+   - NEXT_PUBLIC_APP_URL (not next_public_app_url)
+3. [ ] MONGODB_URI includes /karimnagar_crm
+4. [ ] All variables set for Production, Preview, AND Development
+5. [ ] No quotes around values
+6. [ ] No extra spaces
+7. [ ] MongoDB Atlas IP whitelist has 0.0.0.0/0
+8. [ ] Redeployed after adding variables
+9. [ ] Database seeded (visit /api/seed endpoint)
+
+===========================================
+MONGODB ATLAS IP WHITELIST
+===========================================
+
+1. Go to MongoDB Atlas → Network Access
+2. Click "Add IP Address"
+3. Click "Allow Access from Anywhere"
+4. This adds 0.0.0.0/0
+5. Wait 1-2 minutes
+
+===========================================
+AFTER FIXING - TEST LOGIN
+===========================================
+
+URL: https://realestatecrms.vercel.app/login
+
+Email: admin@karimnagar.properties
+Password: Passw0rd!
+
+===========================================
+
