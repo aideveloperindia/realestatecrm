@@ -1,0 +1,408 @@
+================================================================================
+KARIMNAGAR PROPERTIES CRM - COMPLETE USER GUIDE
+================================================================================
+
+LOGIN CREDENTIALS
+--------------------------------------------------------------------------------
+Email: admin@karimnagar.properties
+Password: Passw0rd!
+⚠️ IMPORTANT: Change password after first login!
+
+
+================================================================================
+MAIN FEATURES OVERVIEW
+================================================================================
+
+✅ All Requested Features Implemented:
+1. Single Admin Authentication (JWT with HttpOnly cookies)
+2. Client Management (Property Sellers)
+3. Customer Management (Property Buyers) with Opt-in tracking
+4. Property Management with Status tracking
+5. Smart Matching Algorithm (Property ↔ Customer)
+6. CSV Import with Data Cleaning
+7. WhatsApp Integration (wa.me links - MVP)
+8. Message Logging & Audit Trail
+9. Search & Filtering
+10. Phone Number Normalization (E.164 format)
+
+
+================================================================================
+NAVIGATION & PAGES
+================================================================================
+
+1. DASHBOARD (/)
+   - Overview statistics (Properties, Clients, Customers, Messages)
+   - Quick action buttons
+   - Access: Main page after login
+
+2. PROPERTIES (/properties)
+   - List all properties
+   - Search by title/city
+   - Filter by status (Available/Sold/On Hold)
+   - Add new property
+   - Update property status
+   - View property details
+
+3. CLIENTS (/clients)
+   - List all clients (sellers)
+   - Search by name/phone/email
+   - Add new client
+   - View client information
+
+4. CUSTOMERS (/customers)
+   - List all customers (buyers)
+   - Search by name/phone/email
+   - Add new customer
+   - Toggle WhatsApp opt-in
+   - View customer profile with MATCHES
+
+5. IMPORT (/import)
+   - Upload CSV files for bulk import
+   - Import types: Clients, Customers, Properties
+   - Data cleaning queue for flagged rows
+   - Phone number normalization
+
+6. MESSAGES (/messages)
+   - View all sent WhatsApp messages
+   - Filter by customer/property
+   - See message status and details
+
+
+================================================================================
+HOW TO USE EACH FEATURE
+================================================================================
+
+1. ADDING A NEW PROPERTY
+--------------------------------------------------------------------------------
+Location: Properties → "Add Property" button
+
+Steps:
+1. Click "Add Property" button on Properties page
+2. Fill in required fields:
+   - Title (e.g., "2BHK Apartment in Town Center")
+   - Type (apartment/house/plot/commercial)
+   - Price (in ₹)
+   - City (required)
+   - Client (select from dropdown)
+3. Fill optional fields:
+   - Locality, District, Address
+   - Bedrooms, Bathrooms, Area
+   - Description
+   - Status (default: Available)
+4. Click "Create Property"
+
+✅ FEATURE AVAILABLE: After creating a property, view matching customers:
+   1. Go to Properties page
+   2. Click "View" on the property
+   3. Scroll to "Suggested Customers (Top Matches)" section
+   4. See top 10 matching customers with scores
+   5. Each match shows:
+      - Customer name, phone, email
+      - Budget range
+      - Match Score (0-100)
+      - Price Score, Location Score, Type Match
+      - Match Reasons
+      - "Send WhatsApp" button
+
+
+2. ADDING A NEW CUSTOMER
+--------------------------------------------------------------------------------
+Location: Customers → "Add Customer" button
+
+Steps:
+1. Click "Add Customer" button on Customers page
+2. Fill in required fields:
+   - Name
+   - Phone (will be normalized to +91 format)
+   - Budget Min & Max (in ₹)
+3. Fill optional fields:
+   - Email
+   - Preferred Types (comma-separated: apartment, house, plot)
+   - City, Locality, District
+   - Opt-in for WhatsApp (checkbox)
+4. Click "Create Customer"
+
+✅ FEATURE AVAILABLE: After creating a customer, view their matches:
+   1. Click "View" next to the customer in the list
+   2. Scroll to "Property Matches" section
+   3. See top 10 matching properties with scores
+   4. Each match shows:
+      - Match Score (0-100)
+      - Price Score, Location Score, Type Match
+      - Match Reasons
+      - "Send WhatsApp" button
+
+
+3. SENDING WHATSAPP MESSAGES
+--------------------------------------------------------------------------------
+
+METHOD 1: Send to Customer from Property Match
+------------------------------------------------
+Location: Customers → [Select Customer] → Property Matches section
+
+Steps:
+1. Open a customer profile
+2. Scroll to "Property Matches" section
+3. Find the property you want to send
+4. Click "Send WhatsApp" button
+5. WhatsApp Web/app will open with pre-filled message
+6. Review and click Send in WhatsApp
+7. Message is automatically logged
+
+Note: Uses wa.me links - opens in your default WhatsApp (browser or app)
+
+METHOD 2: Send to Any Number Manually (Quick Send)
+------------------------------------------------
+Location: Messages → "Quick Send WhatsApp" button
+
+Steps:
+1. Go to Messages page
+2. Click "Quick Send WhatsApp" button
+3. Enter phone number (any format - will be normalized)
+4. Enter your message
+5. Click "Generate WhatsApp Link"
+6. WhatsApp will open with pre-filled message
+7. Review and click Send in WhatsApp
+8. Message is automatically logged
+
+Note: 
+- Phone numbers are auto-normalized to E.164 format
+- Uses YOUR currently logged-in WhatsApp (make sure WhatsApp Web is open with +919505009699)
+- The message goes FROM your WhatsApp TO the entered number
+
+Admin Number: +919505009699
+- This is YOUR admin/business WhatsApp number
+- When you click "Send WhatsApp", it opens YOUR WhatsApp (browser or app)
+- The recipient is the customer's number (entered or from customer profile)
+- The message is sent FROM your logged-in WhatsApp account
+
+⚠️ IMPORTANT: How WhatsApp Sending Works (MVP):
+   1. The system generates wa.me links (WhatsApp click-to-chat links)
+   2. When you click "Send WhatsApp", it opens WhatsApp Web/app
+   3. The link format is: wa.me/[customer_number]?text=[message]
+   4. To send FROM +919505009699:
+      - Make sure WhatsApp Web/Desktop is logged in with +919505009699
+      - Or use WhatsApp on your phone with that number
+      - Click "Send WhatsApp" - it will use your active WhatsApp session
+   5. You still need to click "Send" in WhatsApp to actually send the message
+   6. The message is logged in the system for audit trail
+
+💡 FUTURE: WhatsApp Cloud API integration will allow:
+   - Direct sending without manual click
+   - Sending from +919505009699 automatically
+   - Scheduled messages
+   - Bulk messaging
+
+💡 FUTURE ENHANCEMENT: WhatsApp Cloud API integration will allow sending directly from
+   the admin number without manual clicks.
+
+
+4. FILTERING & SEARCHING
+--------------------------------------------------------------------------------
+
+PROPERTIES PAGE:
+- Search Box: Search by property title or city name
+- Status Filter: Dropdown to filter by Available/Sold/On Hold
+- Location: Top of Properties page, below the header
+
+CUSTOMERS PAGE:
+- Search Box: Search by customer name, phone, or email
+- Location: Top of Customers page, below the header
+
+CLIENTS PAGE:
+- Search Box: Search by client name, phone, or email
+- Location: Top of Clients page, below the header
+
+MESSAGES PAGE:
+- Currently shows all messages
+- Can be filtered by customer/property (via API, UI filter coming soon)
+
+
+5. CSV IMPORT
+--------------------------------------------------------------------------------
+Location: Import page
+
+Steps:
+1. Go to /import
+2. Select import type:
+   - Clients (sellers)
+   - Customers (buyers)
+   - Properties
+3. Upload CSV file (see examples/ folder for format)
+4. System will:
+   - Normalize phone numbers to E.164 format
+   - Detect duplicates
+   - Flag rows with errors
+5. Review cleaning queue for flagged rows
+6. Accept or reject flagged rows
+
+Expected CSV Columns:
+- Clients: name, phone, email, address, notes
+- Customers: name, phone, email, budget_min, budget_max, preferred_types, city, locality, district
+- Properties: title, type, price, city, locality, district, address, bedrooms, bathrooms, area, description
+
+Phone Normalization:
+- 10-digit numbers → +91XXXXXXXXXX
+- Numbers starting with 0 → +91XXXXXXXXXX
+- Numbers starting with 91 → +91XXXXXXXXXX
+- Already in E.164 format → kept as-is
+
+
+6. VIEWING MATCHES
+--------------------------------------------------------------------------------
+
+WHEN VIEWING A CUSTOMER:
+1. Go to Customers page
+2. Click "View" on any customer
+3. Scroll to "Property Matches" section
+4. See top 10 matching properties sorted by score
+5. Each match shows:
+   - Property title, type, price, location
+   - Match score (0-100)
+   - Breakdown: Price Score, Location Score, Type Match
+   - Match reasons (why it matches)
+   - "Send WhatsApp" button
+
+MATCHING ALGORITHM:
+- Final Score = 100 × (0.5 × Price Score + 0.3 × Location Score + 0.2 × Type Match)
+- Price Score: 1.0 if within budget, fuzzy match within ±20%
+- Location Score: 1.0 (same locality), 0.7 (same city), 0.4 (same district)
+- Type Match: 1 if property type in customer preferences, else 0
+
+
+================================================================================
+MISSING FEATURES & WORKAROUNDS
+================================================================================
+
+1. PROPERTY → CUSTOMER SUGGESTIONS (After Adding Property)
+--------------------------------------------------------------------------------
+✅ IMPLEMENTED: When you view a property, you can see matching customers.
+
+HOW TO USE:
+1. Go to Properties page
+2. Click "View" on any property
+3. Scroll to "Suggested Customers (Top Matches)" section
+4. See top 10 matching customers with scores
+5. Click "Send WhatsApp" to send to any customer
+
+2. MANUAL WHATSAPP SENDING (Enter Any Number)
+--------------------------------------------------------------------------------
+✅ IMPLEMENTED: Quick Send feature on Messages page.
+
+HOW TO USE:
+1. Go to Messages page
+2. Click "Quick Send WhatsApp" button
+3. Enter phone number and message
+4. Click "Generate WhatsApp Link"
+5. WhatsApp opens with pre-filled message
+
+
+3. WHATSAPP FROM ADMIN NUMBER (+919505009699)
+--------------------------------------------------------------------------------
+⚠️ CURRENT BEHAVIOR: wa.me links use YOUR currently active WhatsApp session.
+
+To send from +919505009699:
+1. Make sure WhatsApp Web/Desktop is logged in with +919505009699
+2. Click "Send WhatsApp" - it will use your active session
+3. The message goes FROM your logged-in WhatsApp TO the customer's number
+
+💡 FUTURE: WhatsApp Cloud API integration will allow sending directly from admin number
+
+
+4. ADVANCED FILTERING
+--------------------------------------------------------------------------------
+✅ BASIC FILTERING EXISTS:
+- Properties: Search + Status filter
+- Customers: Search
+- Clients: Search
+
+❌ MISSING: Advanced filters (price range, property type, location, etc.)
+
+WORKAROUND: Use search box for text-based filtering
+
+
+================================================================================
+FEATURE CHECKLIST
+================================================================================
+
+✅ Single Admin User (JWT auth, bcrypt password)
+✅ Client Management (CRUD)
+✅ Customer Management (CRUD + Opt-in)
+✅ Property Management (CRUD + Status)
+✅ Smart Matching Algorithm
+✅ CSV Import with Cleaning
+✅ WhatsApp Link Generation
+✅ Message Logging
+✅ Search & Basic Filtering
+✅ Phone Number Normalization
+✅ Deduplication
+✅ Audit Trail
+
+⚠️ PARTIAL:
+- Filtering (basic exists, advanced missing - price range, type filters)
+
+✅ COMPLETE:
+- Property → Customer suggestions (on property detail page)
+- Manual WhatsApp send to any number (Quick Send on Messages page)
+- WhatsApp sending (wa.me links work, requires manual click in WhatsApp - this is MVP behavior)
+
+
+================================================================================
+QUICK REFERENCE
+================================================================================
+
+ADD PROPERTY: Properties → Add Property → Fill form → Create
+ADD CUSTOMER: Customers → Add Customer → Fill form → Create
+VIEW MATCHES: Customers → [Select Customer] → Property Matches section
+SEND WHATSAPP: Customers → [Select Customer] → Property Matches → Send WhatsApp
+IMPORT DATA: Import → Select type → Upload CSV → Review queue
+SEARCH: Use search box on Properties/Customers/Clients pages
+FILTER: Use status dropdown on Properties page
+
+
+================================================================================
+TIPS & BEST PRACTICES
+================================================================================
+
+1. Always set customer opt-in before sending WhatsApp messages
+2. Use CSV import for bulk data entry
+3. Check property matches after adding new customers
+4. Update property status when sold (helps with matching)
+5. Use search to quickly find properties/customers
+6. Review message log to track all communications
+7. Change admin password after first login
+8. Phone numbers are auto-normalized - enter in any format
+
+
+================================================================================
+SUPPORT & TROUBLESHOOTING
+================================================================================
+
+Login Issues:
+- Clear browser cookies
+- Check .env file has correct JWT_SECRET
+- Run: npm run reset-admin
+
+Database Issues:
+- Check MongoDB connection string in .env
+- Verify network connectivity
+- Check MongoDB Atlas IP whitelist
+
+WhatsApp Not Opening:
+- Check if WhatsApp Web is logged in
+- Try different browser
+- Check if pop-ups are blocked
+
+No Matches Showing:
+- Verify customer has budget and preferences set
+- Check property status is "available"
+- Ensure property price is within customer budget range
+
+
+================================================================================
+END OF GUIDE
+================================================================================
+
+For technical details, see README.md
+For quick setup, see QUICKSTART.md
+
