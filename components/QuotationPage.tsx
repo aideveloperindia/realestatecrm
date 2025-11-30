@@ -98,83 +98,142 @@ export default function QuotationPage() {
           </div>
 
           <div className="border-t pt-6">
-            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Cost Savings & Benefits</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Why You Need This Software</h2>
             
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 sm:p-6 rounded-lg">
+            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6 rounded">
+              <div className="flex">
+                <div className="flex-shrink-0">
+                  <svg className="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div className="ml-3">
+                  <p className="text-sm text-yellow-700">
+                    <strong>Important:</strong> This software does NOT replace your staff. Your telecaller and field executive are essential and will continue working with you. The software helps them work more efficiently and prevents data loss that affects your income.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-red-50 to-green-50 p-4 sm:p-6 rounded-lg mb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center">Without Software vs With Software</h3>
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-3">Current Monthly Cost</h3>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between items-center p-2 sm:p-3 bg-white rounded">
-                      <span className="text-xs sm:text-sm text-gray-700">Telecaller Salary:</span>
-                      <span className="font-bold text-xs sm:text-sm text-gray-900">₹10,000/month</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 sm:p-3 bg-white rounded">
-                      <span className="text-xs sm:text-sm text-gray-700">Field Executive Salary:</span>
-                      <span className="font-bold text-xs sm:text-sm text-gray-900">₹10,000/month</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 sm:p-3 bg-red-100 rounded border-2 border-red-200">
-                      <span className="font-semibold text-xs sm:text-sm text-gray-900">Total Monthly Cost:</span>
-                      <span className="font-bold text-sm sm:text-lg text-red-600">₹20,000/month</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 sm:p-3 bg-red-100 rounded border-2 border-red-200">
-                      <span className="font-semibold text-xs sm:text-sm text-gray-900">Annual Cost:</span>
-                      <span className="font-bold text-sm sm:text-lg text-red-600">₹2,40,000/year</span>
-                    </div>
-                  </div>
+                <div className="bg-white p-4 rounded-lg border-2 border-red-200">
+                  <h4 className="font-bold text-red-700 mb-3 text-center">❌ Without Software</h4>
+                  <ul className="text-sm text-gray-700 space-y-2">
+                    <li className="flex items-start">
+                      <span className="text-red-500 mr-2">•</span>
+                      <span><strong>Scattered Data:</strong> Customer details in notebooks, Excel files, WhatsApp chats, phone contacts</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-red-500 mr-2">•</span>
+                      <span><strong>Lost Opportunities:</strong> Can't find matching customers when new property arrives</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-red-500 mr-2">•</span>
+                      <span><strong>Time Wasted:</strong> Staff spends hours searching through scattered data</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-red-500 mr-2">•</span>
+                      <span><strong>Missed Sales:</strong> Properties sit unsold because right customers aren't contacted</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-red-500 mr-2">•</span>
+                      <span><strong>Data Loss Risk:</strong> Notebooks get lost, Excel files corrupted, phones damaged</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-red-500 mr-2">•</span>
+                      <span><strong>Income Impact:</strong> Lower sales due to inefficient matching and lost data</span>
+                    </li>
+                  </ul>
                 </div>
 
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-3">With CRM System</h3>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between items-center p-2 sm:p-3 bg-white rounded">
-                      <span className="text-xs sm:text-sm text-gray-700">Initial Setup (One-time):</span>
-                      <span className="font-bold text-xs sm:text-sm text-gray-900">₹1,90,000</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 sm:p-3 bg-white rounded">
-                      <span className="text-xs sm:text-sm text-gray-700">Hosting (Monthly):</span>
-                      <span className="font-bold text-xs sm:text-sm text-green-600">₹0/month</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 sm:p-3 bg-white rounded">
-                      <span className="text-xs sm:text-sm text-gray-700">Maintenance:</span>
-                      <span className="font-bold text-xs sm:text-sm text-gray-900">₹500/change</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 sm:p-3 bg-green-100 rounded border-2 border-green-200">
-                      <span className="font-semibold text-xs sm:text-sm text-gray-900">First Year Total:</span>
-                      <span className="font-bold text-sm sm:text-lg text-green-600">₹1,90,000*</span>
-                    </div>
-                    <p className="text-xs text-gray-600 mt-2">
-                      *Assuming no changes needed in first year. Each change costs ₹500.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-white rounded-lg border-2 border-green-300">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-base sm:text-lg">First Year Savings</h3>
-                    <p className="text-xs sm:text-sm text-gray-600">
-                      Your current annual cost: ₹2,40,000 vs CRM first year: ₹1,90,000
-                    </p>
-                  </div>
-                  <div className="text-left sm:text-right">
-                    <div className="text-xl sm:text-2xl font-bold text-green-600">₹50,000</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Saved in first year</div>
-                  </div>
+                <div className="bg-white p-4 rounded-lg border-2 border-green-200">
+                  <h4 className="font-bold text-green-700 mb-3 text-center">✅ With Software</h4>
+                  <ul className="text-sm text-gray-700 space-y-2">
+                    <li className="flex items-start">
+                      <span className="text-green-500 mr-2">•</span>
+                      <span><strong>Organized Data:</strong> All customers, properties, and clients in one secure system</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-500 mr-2">•</span>
+                      <span><strong>Instant Matching:</strong> System automatically finds best customers for any property</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-500 mr-2">•</span>
+                      <span><strong>Time Saved:</strong> Staff can focus on calling customers instead of searching data</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-500 mr-2">•</span>
+                      <span><strong>More Sales:</strong> Right customers contacted at right time = faster property sales</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-500 mr-2">•</span>
+                      <span><strong>Data Safety:</strong> All data backed up in cloud - never lost even if device breaks</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-500 mr-2">•</span>
+                      <span><strong>Income Growth:</strong> Better organization = more sales = higher profit</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
+            </div>
 
-              <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-                <h3 className="font-semibold text-gray-900 mb-2">Additional Benefits:</h3>
-                <ul className="text-sm text-gray-700 space-y-1 ml-4 list-disc">
-                  <li><strong>Faster Operations:</strong> Match properties to customers in seconds instead of hours</li>
-                  <li><strong>Better Accuracy:</strong> Automated matching reduces human errors</li>
-                  <li><strong>24/7 Availability:</strong> Access your CRM from anywhere, anytime</li>
-                  <li><strong>Professional Image:</strong> Impress clients with modern technology</li>
-                  <li><strong>Scalability:</strong> Handle more properties and customers easily</li>
-                  <li><strong>Data Security:</strong> All data safely stored in cloud database</li>
-                </ul>
+            <div className="bg-blue-50 p-4 sm:p-6 rounded-lg mb-6">
+              <h3 className="font-semibold text-gray-900 mb-3 text-lg">Real Impact on Your Business</h3>
+              <div className="space-y-3 text-sm text-gray-700">
+                <div className="bg-white p-3 rounded">
+                  <p><strong>Scenario 1: New Property Arrives</strong></p>
+                  <p className="mt-1 text-xs sm:text-sm">
+                    <span className="text-red-600">Without Software:</span> Staff searches through notebooks/files for 2-3 hours to find matching customers. Many potential matches missed. Property takes longer to sell.
+                  </p>
+                  <p className="mt-1 text-xs sm:text-sm">
+                    <span className="text-green-600">With Software:</span> System shows top 10 matching customers in 2 seconds. Staff immediately calls them. Property sells faster.
+                  </p>
+                </div>
+                <div className="bg-white p-3 rounded">
+                  <p><strong>Scenario 2: Customer Calls Looking for Property</strong></p>
+                  <p className="mt-1 text-xs sm:text-sm">
+                    <span className="text-red-600">Without Software:</span> Staff searches through scattered data, might miss perfect property match. Customer goes to competitor.
+                  </p>
+                  <p className="mt-1 text-xs sm:text-sm">
+                    <span className="text-green-600">With Software:</span> System instantly shows all matching properties. Staff presents best options. Customer buys from you.
+                  </p>
+                </div>
+                <div className="bg-white p-3 rounded">
+                  <p><strong>Scenario 3: Data Loss</strong></p>
+                  <p className="mt-1 text-xs sm:text-sm">
+                    <span className="text-red-600">Without Software:</span> Notebook lost, Excel file corrupted, phone damaged = All customer data gone. Lost income from those customers.
+                  </p>
+                  <p className="mt-1 text-xs sm:text-sm">
+                    <span className="text-green-600">With Software:</strong> All data in cloud. Even if device breaks, data is safe. No income loss.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-green-50 p-4 sm:p-6 rounded-lg border-2 border-green-300">
+              <h3 className="font-bold text-gray-900 mb-3 text-lg">Investment Summary</h3>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between items-center p-2 sm:p-3 bg-white rounded">
+                  <span className="text-xs sm:text-sm text-gray-700">One-time Setup:</span>
+                  <span className="font-bold text-xs sm:text-sm text-gray-900">₹1,90,000</span>
+                </div>
+                <div className="flex justify-between items-center p-2 sm:p-3 bg-white rounded">
+                  <span className="text-xs sm:text-sm text-gray-700">Monthly Hosting:</span>
+                  <span className="font-bold text-xs sm:text-sm text-green-600">₹0/month (FREE)</span>
+                </div>
+                <div className="flex justify-between items-center p-2 sm:p-3 bg-white rounded">
+                  <span className="text-xs sm:text-sm text-gray-700">Future Changes:</span>
+                  <span className="font-bold text-xs sm:text-sm text-gray-900">₹500 per change (only when needed)</span>
+                </div>
+                <div className="mt-4 p-3 bg-white rounded border-2 border-green-400">
+                  <p className="text-xs sm:text-sm text-gray-700 text-center">
+                    <strong className="text-green-700">This software protects your data, increases sales efficiency, and helps your staff work better.</strong> Your staff (telecaller & field executive) remain essential - the software just makes them more effective!
+                  </p>
+                </div>
               </div>
             </div>
           </div>
