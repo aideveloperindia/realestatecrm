@@ -27,7 +27,16 @@ if (!global.mongoose) {
 
 async function connectDB(): Promise<typeof mongoose> {
   if (!MONGODB_URI) {
-    throw new Error('MONGODB_URI is not defined. Please set it in environment variables.');
+    const errorMsg = 'MONGODB_URI is not defined. Please set it in environment variables.';
+    console.error('❌', errorMsg);
+    throw new Error(errorMsg);
+  }
+
+  // Validate connection string format
+  if (!MONGODB_URI.startsWith('mongodb://') && !MONGODB_URI.startsWith('mongodb+srv://')) {
+    const errorMsg = 'Invalid MONGODB_URI format. Must start with mongodb:// or mongodb+srv://';
+    console.error('❌', errorMsg);
+    throw new Error(errorMsg);
   }
 
   if (cached.conn) {
@@ -37,13 +46,16 @@ async function connectDB(): Promise<typeof mongoose> {
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
+      serverSelectionTimeoutMS: 10000, // 10 seconds timeout
+      socketTimeoutMS: 45000, // 45 seconds socket timeout
     };
 
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
-      console.log('✅ MongoDB connected');
+      console.log('✅ MongoDB connected successfully');
       return mongoose;
-    }).catch((error) => {
+    }).catch((error: any) => {
       console.error('❌ MongoDB connection error:', error.message);
+      console.error('Connection string:', MONGODB_URI.replace(/:[^:@]+@/, ':****@')); // Hide password
       cached.promise = null;
       throw error;
     });
@@ -51,9 +63,15 @@ async function connectDB(): Promise<typeof mongoose> {
 
   try {
     cached.conn = await cached.promise;
-  } catch (e) {
+  } catch (e: any) {
     cached.promise = null;
-    console.error('❌ MongoDB connection failed:', e);
+    console.error('❌ MongoDB connection failed:', e.message);
+    if (e.message.includes('authentication')) {
+      console.error('💡 Tip: Check MongoDB username/password in connection string');
+    }
+    if (e.message.includes('network') || e.message.includes('timeout')) {
+      console.error('💡 Tip: Check MongoDB Atlas IP whitelist (add 0.0.0.0/0 for Vercel)');
+    }
     throw e;
   }
 
