@@ -29,6 +29,7 @@ export default function Layout({ children }: LayoutProps) {
         }
       }
     } catch (error) {
+      console.error('Auth check error:', error);
       if (pathname !== '/login') {
         router.push('/login');
       }

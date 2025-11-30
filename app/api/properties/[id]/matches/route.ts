@@ -22,7 +22,7 @@ export async function GET(
     }
 
     // Get all customers
-    const customers = await Customer.find().lean();
+    const customers = await Customer.find().lean() as any[];
 
     // Calculate matches (reverse matching - property to customers)
     const matches = customers

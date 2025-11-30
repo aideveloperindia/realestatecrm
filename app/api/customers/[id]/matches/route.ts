@@ -22,7 +22,7 @@ export async function GET(
     }
 
     // Get all available properties
-    const properties = await Property.find({ status: 'available' }).lean();
+    const properties = await Property.find({ status: 'available' }).lean() as any[];
 
     // Calculate matches
     const matches = findTopMatches(customer, properties, 10);

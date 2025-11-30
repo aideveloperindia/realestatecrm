@@ -2,7 +2,7 @@ import Papa from 'papaparse';
 import { normalizePhone } from './phone';
 
 export interface CSVRow {
-  [key: string]: string | number | undefined;
+  [key: string]: any;
   _rowIndex?: number;
   _errors?: string[];
   _normalized?: {

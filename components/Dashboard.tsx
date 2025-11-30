@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Dashboard() {
   const [stats, setStats] = useState({
@@ -19,16 +20,16 @@ export default function Dashboard() {
   const fetchStats = async () => {
     try {
       const [propsRes, clientsRes, customersRes, messagesRes] = await Promise.all([
-        fetch('/api/properties'),
-        fetch('/api/clients'),
-        fetch('/api/customers'),
-        fetch('/api/messages?limit=1'),
+        fetch('/api/properties').catch(err => ({ ok: false, json: () => ({ total: 0 }) })),
+        fetch('/api/clients').catch(err => ({ ok: false, json: () => ({ total: 0 }) })),
+        fetch('/api/customers').catch(err => ({ ok: false, json: () => ({ total: 0 }) })),
+        fetch('/api/messages?limit=1').catch(err => ({ ok: false, json: () => ({ total: 0 }) })),
       ]);
 
-      const props = await propsRes.json();
-      const clients = await clientsRes.json();
-      const customers = await customersRes.json();
-      const messages = await messagesRes.json();
+      const props = propsRes.ok ? await propsRes.json() : { total: 0 };
+      const clients = clientsRes.ok ? await clientsRes.json() : { total: 0 };
+      const customers = customersRes.ok ? await customersRes.json() : { total: 0 };
+      const messages = messagesRes.ok ? await messagesRes.json() : { total: 0 };
 
       setStats({
         properties: props.total || 0,
@@ -38,6 +39,13 @@ export default function Dashboard() {
       });
     } catch (error) {
       console.error('Error fetching stats:', error);
+      // Set all stats to 0 on error
+      setStats({
+        properties: 0,
+        clients: 0,
+        customers: 0,
+        messages: 0,
+      });
     } finally {
       setLoading(false);
     }
@@ -170,6 +178,34 @@ export default function Dashboard() {
             <div className="text-sm text-gray-500">Upload CSV file</div>
           </Link>
         </div>
+      </div>
+
+      <div className="mt-8 text-center">
+        <Link
+          href="/quotation"
+          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 font-medium mb-8"
+        >
+          View Project Quotation
+        </Link>
+      </div>
+
+      <div className="mt-8 text-center border-t pt-6">
+        <a
+          href="https://aideveloperindia.store/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900"
+        >
+          <span>Built by</span>
+          <Image
+            src="/A-logo.png"
+            alt="AI Developer India Logo"
+            width={24}
+            height={24}
+            className="inline-block"
+          />
+          <span className="font-medium">AI Developer India</span>
+        </a>
       </div>
     </div>
   );
