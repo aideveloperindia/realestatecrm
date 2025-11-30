@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCurrentUser } from '@/lib/auth';
 
+export const dynamic = 'force-dynamic'; // Force dynamic rendering
+
 export async function GET(request: NextRequest) {
   try {
     const user = await getCurrentUser(request);
@@ -17,9 +19,13 @@ export async function GET(request: NextRequest) {
         email: user.email,
       },
     });
-  } catch (error) {
+  } catch (error: any) {
+    console.error('Error in /api/auth/me:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { 
+        error: 'Internal server error',
+        details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      },
       { status: 500 }
     );
   }

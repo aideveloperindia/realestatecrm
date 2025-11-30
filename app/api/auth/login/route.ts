@@ -5,7 +5,16 @@ import { verifyPassword, generateToken, setAuthCookie } from '@/lib/auth';
 
 export async function POST(request: NextRequest) {
   try {
-    await connectDB();
+    // Connect to database
+    try {
+      await connectDB();
+    } catch (dbError: any) {
+      console.error('Database connection error:', dbError.message);
+      return NextResponse.json(
+        { error: 'Database connection failed. Please check MONGODB_URI environment variable.' },
+        { status: 500 }
+      );
+    }
 
     const { email, password } = await request.json();
 
@@ -17,7 +26,17 @@ export async function POST(request: NextRequest) {
     }
 
     const normalizedEmail = email.toLowerCase().trim();
-    const user = await User.findOne({ email: normalizedEmail });
+    
+    let user;
+    try {
+      user = await User.findOne({ email: normalizedEmail });
+    } catch (dbError: any) {
+      console.error('Database query error:', dbError.message);
+      return NextResponse.json(
+        { error: 'Database query failed' },
+        { status: 500 }
+      );
+    }
     
     if (!user) {
       console.error(`Login failed: User not found for email: ${normalizedEmail}`);
@@ -54,10 +73,10 @@ export async function POST(request: NextRequest) {
     setAuthCookie(response, token);
 
     return response;
-  } catch (error) {
+  } catch (error: any) {
     console.error('Login error:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: error.message || 'Internal server error' },
       { status: 500 }
     );
   }

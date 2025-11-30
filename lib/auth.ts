@@ -50,26 +50,36 @@ export function getTokenFromRequest(request: NextRequest): string | null {
 }
 
 export async function getCurrentUser(request: NextRequest): Promise<{ userId: string; email: string } | null> {
-  const token = getTokenFromRequest(request);
-  if (!token) {
+  try {
+    const token = getTokenFromRequest(request);
+    if (!token) {
+      return null;
+    }
+
+    const payload = verifyToken(token);
+    if (!payload) {
+      return null;
+    }
+
+    // Verify user still exists
+    try {
+      const user = await User.findById(payload.userId);
+      if (!user) {
+        return null;
+      }
+
+      return {
+        userId: payload.userId,
+        email: payload.email,
+      };
+    } catch (dbError) {
+      console.error('Database error in getCurrentUser:', dbError);
+      return null;
+    }
+  } catch (error) {
+    console.error('Error in getCurrentUser:', error);
     return null;
   }
-
-  const payload = verifyToken(token);
-  if (!payload) {
-    return null;
-  }
-
-  // Verify user still exists
-  const user = await User.findById(payload.userId);
-  if (!user) {
-    return null;
-  }
-
-  return {
-    userId: payload.userId,
-    email: payload.email,
-  };
 }
 
 export async function requireAuth(request: NextRequest): Promise<{ userId: string; email: string }> {
