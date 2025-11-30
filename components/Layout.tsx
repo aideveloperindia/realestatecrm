@@ -69,8 +69,6 @@ export default function Layout({ children }: LayoutProps) {
     { href: '/messages', label: 'Messages' },
   ];
 
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-white shadow-sm border-b">
