@@ -11,7 +11,7 @@
 **Possible Causes:**
 1. **Not logged in** - API routes require authentication
    - **Solution:** Go to `/login` and log in first
-   - Default credentials: `admin@karimnagar.properties` / `Passw0rd!`
+   - Default credentials: `admin@realestatecrms` / `Passw0rd!`
 
 2. **MongoDB connection failing**
    - **Solution:** Check MongoDB Atlas:
@@ -162,7 +162,7 @@ chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/...
 
 1. **Make sure you're logged in:**
    - Go to `http://localhost:3000/login`
-   - Login with: `admin@karimnagar.properties` / `Passw0rd!`
+   - Login with: `admin@realestatecrms` / `Passw0rd!`
 
 2. **If login fails:**
    ```bash

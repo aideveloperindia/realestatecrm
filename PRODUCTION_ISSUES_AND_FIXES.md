@@ -162,7 +162,7 @@ npm run seed
 
 1. Go to: `https://your-app.vercel.app/login`
 2. Login with:
-   - Email: `admin@karimnagar.properties`
+   - Email: `admin@realestatecrms`
    - Password: `Passw0rd!`
 3. If successful, change password immediately!
 
@@ -215,7 +215,7 @@ mongodb+srv://aideveloperindia_db_user:y3VndJC8SvQovBKY@realestatecrm.fiq02a1.mo
 ```
 
 **Login Credentials:**
-- Email: `admin@karimnagar.properties`
+- Email: `admin@realestatecrms`
 - Password: `Passw0rd!`
 
 ---

@@ -111,7 +111,7 @@ curl -X POST https://realestatecrms.vercel.app/api/seed \
 ### Step 6: Test Login
 
 1. Visit: `https://realestatecrms.vercel.app/login`
-2. Email: `admin@karimnagar.properties`
+2. Email: `admin@realestatecrms`
 3. Password: `Passw0rd!`
 
 ---

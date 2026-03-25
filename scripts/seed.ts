@@ -21,7 +21,7 @@ async function seed() {
     await Property.deleteMany({});
 
     // Create admin user
-    const adminEmail = process.env.ADMIN_EMAIL || 'admin@karimnagar.properties';
+    const adminEmail = process.env.ADMIN_EMAIL || 'admin@realestatecrms';
     const adminPassword = process.env.ADMIN_PASSWORD || 'Passw0rd!';
 
     console.log('Creating admin user...');

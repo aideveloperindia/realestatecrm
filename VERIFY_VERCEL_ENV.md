@@ -145,7 +145,7 @@ Even with correct connection string, MongoDB Atlas might block Vercel:
 1. **Redeploy** in Vercel
 2. Visit: `https://realestatecrms.vercel.app/login`
 3. Try login:
-   - Email: `admin@karimnagar.properties`
+   - Email: `admin@realestatecrms`
    - Password: `Passw0rd!`
 
 If still failing:

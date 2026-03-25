@@ -13,7 +13,7 @@ Create `.env` file:
 MONGODB_URI=your-mongodb-connection-string
 JWT_SECRET=your-random-secret-key
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-ADMIN_EMAIL=admin@karimnagar.properties
+ADMIN_EMAIL=admin@realestatecrms
 ADMIN_PASSWORD=Passw0rd!
 ```
 
@@ -29,7 +29,7 @@ npm run dev
 
 ### 5. Login
 - Go to http://localhost:3000
-- Email: `admin@karimnagar.properties`
+- Email: `admin@realestatecrms`
 - Password: `Passw0rd!`
 
 ## First Steps After Login

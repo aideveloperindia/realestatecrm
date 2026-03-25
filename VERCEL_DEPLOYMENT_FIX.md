@@ -78,7 +78,7 @@ export async function POST() {
   try {
     await connectDB();
     
-    const adminEmail = process.env.ADMIN_EMAIL || 'admin@karimnagar.properties';
+    const adminEmail = process.env.ADMIN_EMAIL || 'admin@realestatecrms';
     const adminPassword = process.env.ADMIN_PASSWORD || 'Passw0rd!';
     
     // Check if admin exists
@@ -114,7 +114,7 @@ Then call: `POST https://your-app.vercel.app/api/seed`
 
 1. Go to your Vercel URL: `https://your-app.vercel.app/login`
 2. Login with:
-   - Email: `admin@karimnagar.properties`
+   - Email: `admin@realestatecrms`
    - Password: `Passw0rd!`
 
 ### Step 5: Check Vercel Logs

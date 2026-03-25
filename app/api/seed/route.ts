@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
 
     await connectDB();
     
-    const adminEmail = process.env.ADMIN_EMAIL || 'admin@karimnagar.properties';
+    const adminEmail = process.env.ADMIN_EMAIL || 'admin@realestatecrms';
     const adminPassword = process.env.ADMIN_PASSWORD || 'Passw0rd!';
     
     // Check if admin exists

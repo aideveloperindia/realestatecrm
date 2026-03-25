@@ -53,7 +53,7 @@ JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 
 # Admin credentials (used by seed script only - change password after first login!)
-ADMIN_EMAIL=admin@karimnagar.properties
+ADMIN_EMAIL=admin@realestatecrms
 ADMIN_PASSWORD=Passw0rd!
 ```
 
@@ -71,7 +71,7 @@ npm run seed
 ```
 
 This will create:
-- Admin user (email: `admin@karimnagar.properties`, password: `Passw0rd!`)
+- Admin user (email: `admin@realestatecrms`, password: `Passw0rd!`)
 - 2 sample clients (sellers)
 - 3 sample customers (buyers)
 - 5 sample properties

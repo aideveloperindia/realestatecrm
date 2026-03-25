@@ -129,7 +129,7 @@ This will show you:
 
 1. Visit: `https://realestatecrms.vercel.app/login`
 2. Login with:
-   - Email: `admin@karimnagar.properties`
+   - Email: `admin@realestatecrms`
    - Password: `Passw0rd!`
 
 **Note:** If database isn't seeded, you'll need to seed it first using `/api/seed` endpoint.

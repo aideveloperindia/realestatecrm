@@ -49,7 +49,7 @@ https://your-app-name.vercel.app
 ### 4. ADMIN_EMAIL (Optional - for seed script only)
 **Value:** Admin user email
 ```
-admin@karimnagar.properties
+admin@realestatecrms
 ```
 
 **Note:** Only needed if you want to run the seed script on Vercel. Can be set later.
@@ -120,7 +120,7 @@ JWT_SECRET=your-super-secret-jwt-key-minimum-32-characters-long-change-this
 
 NEXT_PUBLIC_APP_URL=https://your-app-name.vercel.app
 
-ADMIN_EMAIL=admin@karimnagar.properties
+ADMIN_EMAIL=admin@realestatecrms
 
 ADMIN_PASSWORD=Passw0rd!
 ```

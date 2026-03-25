@@ -26,7 +26,7 @@ Your database needs an admin user to log in. You have two options:
    ```
 
 3. After seeding, you can log in with:
-   - Email: `admin@karimnagar.properties`
+   - Email: `admin@realestatecrms`
    - Password: `Passw0rd!`
 
 **⚠️ IMPORTANT:** After seeding, consider deleting `/app/api/seed/route.ts` for security!
@@ -44,7 +44,7 @@ npm run seed
 
 1. Visit: `https://realestatecrms.vercel.app/login`
 2. Login with:
-   - Email: `admin@karimnagar.properties`
+   - Email: `admin@realestatecrms`
    - Password: `Passw0rd!`
 
 ---

@@ -84,7 +84,7 @@ npm run seed
 
 1. Go to: `https://your-app.vercel.app/login`
 2. Login with:
-   - Email: `admin@karimnagar.properties`
+   - Email: `admin@realestatecrms`
    - Password: `Passw0rd!`
 3. Change password immediately after first login!
 
@@ -124,7 +124,7 @@ npm run seed
 - `NEXT_PUBLIC_APP_URL` - Your Vercel deployment URL
 
 ### Optional (for seed):
-- `ADMIN_EMAIL` - Admin email (default: admin@karimnagar.properties)
+- `ADMIN_EMAIL` - Admin email (default: admin@realestatecrms)
 - `ADMIN_PASSWORD` - Admin password (default: Passw0rd!)
 - `SEED_SECRET` - Secret for seed API route
 

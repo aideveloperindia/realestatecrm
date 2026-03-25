@@ -122,7 +122,7 @@ Call the seed API endpoint to create admin user (see Cause #4 above)
 ### ✅ Step 5: Test Login
 
 - URL: `https://your-app.vercel.app/login`
-- Email: `admin@karimnagar.properties`
+- Email: `admin@realestatecrms`
 - Password: `Passw0rd!`
 
 ---
