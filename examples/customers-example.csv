@@ -1,0 +1,5 @@
+name,phone,email,budget_min,budget_max,preferred_types,city,locality,district
+Amit Patel,9876543220,amit@example.com,2000000,5000000,"apartment, house",Karimnagar,Town Center,Karimnagar District
+Sneha Reddy,9876543221,sneha@example.com,1000000,3000000,apartment,Karimnagar,Suburban Area,Karimnagar District
+Vikram Singh,9876543222,vikram@example.com,5000000,10000000,"house, plot",Karimnagar,,Karimnagar District
+

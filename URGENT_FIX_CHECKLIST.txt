@@ -1,0 +1,108 @@
+===========================================
+URGENT: FIX 500 ERROR - COMPLETE CHECKLIST
+===========================================
+
+ERROR: api/auth/login returns 500
+"Database connection failed. Please check MONGODB_URI environment variable."
+
+===========================================
+STEP 1: CHECK VERCEL FUNCTION LOGS (DO THIS FIRST!)
+===========================================
+
+1. Open: https://vercel.com/dashboard
+2. Click project: realestatecrms
+3. Click "Deployments" tab
+4. Click LATEST deployment
+5. Click "Functions" tab
+6. Click "/api/auth/login"
+7. Look at "Runtime Logs"
+8. COPY THE ERROR MESSAGE
+
+This will tell you EXACTLY what's wrong!
+
+===========================================
+STEP 2: VERIFY MONGODB_URI IN VERCEL
+===========================================
+
+1. Vercel Dashboard → Project → Settings → Environment Variables
+
+2. Check MONGODB_URI:
+   - Name: MONGODB_URI (exact, case-sensitive)
+   - Value: mongodb+srv://aideveloperindia_db_user:y3VndJC8SvQovBKY@realestatecrm.fiq02a1.mongodb.net/karimnagar_crm?retryWrites=true&w=majority&appName=realestatecrm
+   - ☑ Production
+   - ☑ Preview
+   - ☑ Development
+
+3. Make sure:
+   - NO quotes around value
+   - NO spaces before/after
+   - Includes /karimnagar_crm
+   - Includes ?retryWrites=true&w=majority
+
+===========================================
+STEP 3: REDEPLOY (CRITICAL!)
+===========================================
+
+After updating environment variables:
+
+1. Deployments tab
+2. Click "..." on LATEST deployment
+3. Click "Redeploy"
+4. Wait 2-5 minutes
+
+IF YOU DON'T REDEPLOY, CHANGES WON'T APPLY!
+
+===========================================
+STEP 4: CHECK MONGODB ATLAS IP WHITELIST
+===========================================
+
+1. MongoDB Atlas → Network Access
+2. Verify 0.0.0.0/0 exists
+3. If not, click "Allow Access from Anywhere"
+4. Wait 2-3 minutes
+
+===========================================
+STEP 5: VERIFY OTHER VARIABLES
+===========================================
+
+JWT_SECRET:
+- Value: 6fa9e19fcca83be9b4eec7277bd48d171d07934c879bf67a3ba8fb2089a26ca3
+- ☑ All environments
+
+NEXT_PUBLIC_APP_URL:
+- Value: https://realestatecrms.vercel.app
+- ☑ All environments
+
+===========================================
+COMMON MISTAKES TO AVOID
+===========================================
+
+❌ Updated variable but didn't redeploy
+❌ Variable only set for Production (missing Preview/Development)
+❌ Variable name typo (MONGODB_URI_ or mongodb_uri)
+❌ Quotes around value
+❌ Spaces in value
+❌ Missing /karimnagar_crm in connection string
+❌ MongoDB Atlas IP whitelist blocking Vercel
+
+===========================================
+AFTER FIXING
+===========================================
+
+1. Redeploy (if updated variables)
+2. Wait for deployment to complete
+3. Test: https://realestatecrms.vercel.app/login
+4. Email: admin@karimnagar.properties
+5. Password: Passw0rd!
+
+===========================================
+IF STILL NOT WORKING
+===========================================
+
+Share:
+1. Error from Vercel function logs (Step 1)
+2. Screenshot of environment variables (hide values)
+3. Confirmation of redeploy
+
+===========================================
+
